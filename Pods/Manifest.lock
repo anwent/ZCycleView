@@ -1,16 +1,16 @@
 PODS:
-  - Kingfisher (4.10.0)
+  - Nuke (7.5.2)
 
 DEPENDENCIES:
-  - Kingfisher (>= 4.3.1)
+  - Nuke
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - Kingfisher
+    - Nuke
 
 SPEC CHECKSUMS:
-  Kingfisher: 43c4b802d8b5256cf1f4379e9cd10b329be6d3e2
+  Nuke: 0350d346a688426e8f2331253ef28dc2fc4f6178
 
-PODFILE CHECKSUM: fd3e7702f2499ae197362d8e55059c9913ad8dc2
+PODFILE CHECKSUM: ec56d9fe1ac3470e668b15830d90a8be5b3ad998
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.6.0.beta.2

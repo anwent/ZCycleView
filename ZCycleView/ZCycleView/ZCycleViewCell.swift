@@ -7,7 +7,8 @@
 //
 
 import UIKit
-import Kingfisher
+//import Kingfisher
+import Nuke
 
 enum ResourceType {
     case image
@@ -35,7 +36,11 @@ class ZCycleViewCell: UICollectionViewCell {
         
         if titleImgURL != nil {
             if let url = URL(string: titleImgURL!) {
-                titleImageView.kf.setImage(with: url)
+//                titleImageView.kf.setImage(with: url)
+                Nuke.loadImage(with: url, into: titleImageView)
+//                let contentModes = ImageLoadingOptions.ContentModes.init(success: .scaleToFill, failure: .center, placeholder: .center)
+//                let options = ImageLoadingOptions.init(placeholder: placeholder, transition: .fadeIn(duration: 0.66), failureImage: placeholder, contentModes: contentModes)
+//                Nuke.loadImage(with: url, options: options, into: itleImageView)
             }
         } else {
             titleImageView.image = titleImage
@@ -48,7 +53,10 @@ class ZCycleViewCell: UICollectionViewCell {
                 imageView.image = placeholder
                 return
         }
-        imageView.kf.setImage(with: url, placeholder: placeholder, options: [.transition(.fade(0.3))])
+        let contentModes = ImageLoadingOptions.ContentModes.init(success: .scaleToFill, failure: .center, placeholder: .center)
+        let options = ImageLoadingOptions.init(placeholder: placeholder, transition: .fadeIn(duration: 0.66), failureImage: placeholder, contentModes: contentModes)
+        Nuke.loadImage(with: url, options: options, into: imageView)
+//        imageView.kf.setImage(with: url, placeholder: placeholder, options: [.transition(.fade(0.3))])
     }
     
     var imageView: UIImageView!
